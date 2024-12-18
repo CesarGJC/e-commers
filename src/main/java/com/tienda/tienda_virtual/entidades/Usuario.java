@@ -1,10 +1,14 @@
 package com.tienda.tienda_virtual.entidades;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Email;
 
 @Entity
 @Table(name="usuarios")
 public class Usuario {
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -12,6 +16,8 @@ public class Usuario {
     @Column(nullable = false, length = 100)
     private String nombre;
 
+    @NotBlank(message = "El email es obligatorio")
+    @Email(message = "El email debe tener un formato válido")
     @Column(nullable = false, unique = true, length = 100)
     private String email;
 

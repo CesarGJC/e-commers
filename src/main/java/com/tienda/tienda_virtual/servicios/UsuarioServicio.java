@@ -62,9 +62,8 @@ public class UsuarioServicio {
         this.passwordEncoder = passwordEncoder;
     }
 
-    public void registrarUsuario(Usuario usuario) {
+    public Usuario registrarUsuario(Usuario usuario) {
         usuario.setContraseña(passwordEncoder.encode(usuario.getContraseña()));
-        Usuario usuarioGuardado = usuarioRepositorio.save(usuario);
+        return usuarioRepositorio.save(usuario);
     }
-
 }
