@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+<header>
+    <h1>Carrito de Compras</h1>
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="productos.html">Catálogo</a>
+    </nav>
+</header>
+<main>
+    <section id="carrito">
+        <!-- Carrito cargado dinámicamente -->
+    </section>
+    <div id="total">
+        <h2>Total: $<span id="total-monto">0.00</span></h2>
+        <button onclick="registrarPedido()">Registrar Pedido</button>
+    </div>
+</main>
+<footer>
+    <p>&copy; 2024 Tienda Virtual</p>
+</footer>
+<script src="js/carrito.js">
+    const verificarAutenticacion = () => {
+        const usuario = JSON.parse(localStorage.getItem('usuario'));
+        if (!usuario) {
+            alert('Debes iniciar sesión para acceder a esta página.');
+            window.location.href = 'login.html';
+        }
+    };
+
+    document.addEventListener('DOMContentLoaded', verificarAutenticacion);
+
+</script>
+</body>
+
+</html>

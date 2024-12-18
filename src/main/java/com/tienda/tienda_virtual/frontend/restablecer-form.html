@@ -1,0 +1,18 @@
+<form id="restablecer-form">
+    <label for="password">Nueva Contraseña:</label>
+    <input type="password" id="password" required>
+    <button type="submit">Restablecer Contraseña</button>
+</form>
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const token = params.get('token');
+
+    document.getElementById('restablecer-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        fetch(`http://localhost:8080/api/usuarios/restablecer?token=${token}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(document.getElementById('password').value)
+        }).then(response => alert('Contraseña restablecida con éxito.'));
+    });
+</script>

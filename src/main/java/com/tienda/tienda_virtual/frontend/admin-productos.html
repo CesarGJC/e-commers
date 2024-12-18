@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Productos</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+<header>
+    <h1>Gestión de Productos</h1>
+    <button onclick="cerrarSesion()">Cerrar Sesión</button>
+</header>
+<main>
+    <section id="formulario-producto">
+        <h2>Crear Producto</h2>
+        <form id="producto-form">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" required>
+            <label for="descripcion">Descripción:</label>
+            <textarea id="descripcion" required></textarea>
+            <label for="precio">Precio:</label>
+            <input type="number" id="precio" required>
+            <label for="categoria">Categoría:</label>
+            <input type="text" id="categoria" required>
+            <label for="imagen">Imagen (URL):</label>
+            <input type="text" id="imagen" required>
+            <button type="submit">Guardar Producto</button>
+        </form>
+    </section>
+    <section id="listado-productos">
+        <h2>Productos Registrados</h2>
+        <div id="productos"></div>
+    </section>
+</main>
+<footer>
+    <p>&copy; 2024 Tienda Virtual</p>
+</footer>
+<script src="js/admin-productos.js"></script>
+</body>
+</html>
